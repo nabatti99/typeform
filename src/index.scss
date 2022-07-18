@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap');
+
+$font-family-sans-serif: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$yellow: #f3cd59; 
+$yellow-light: #f9e6ac;
+$enable-shadows: false;
+
+$input-bg: transparent;
+$input-color: $yellow;
+$input-border-radius: 0;
+$input-border-radius-sm: 0;
+$input-border-radius-lg: 0;
+$input-focus-box-shadow: unset;
+$input-focus-border-color: unset;
+
+@import "bootstrap/scss/_functions";
+@import "bootstrap/scss/_variables";
+
+$btn-font-weight: $font-weight-semibold;
+
+$theme-colors: map-merge(
+  $theme-colors, (
+    "yellow": $yellow,
+    "yellow-light": $yellow-light
+  )
+);
+
+@import "bootstrap/scss/bootstrap-utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          ("yellow-light": tint-color($yellow, 50%)),
+        ),
+      ),
+    ),
+  )
+);
+
+@import "bootstrap/scss/bootstrap";
+
+._choice {
+  transition: $btn-transition !important;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($yellow, 25%) !important;
+  }
+
+  &.active {
+    background-color: rgba($yellow, 35%) !important;
+  }
+}

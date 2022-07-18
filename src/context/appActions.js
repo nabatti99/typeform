@@ -1,0 +1,4 @@
+export default {
+  CHANGE_PAGE: "CHANGE_PAGE",
+  CHANGE_ANSWER: "CHANGE_ANSWER",
+};

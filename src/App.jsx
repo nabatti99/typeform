@@ -17,6 +17,7 @@ function App() {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        overflowX: "hidden",
       }}
     >
       {pageIndex[currentPage]}

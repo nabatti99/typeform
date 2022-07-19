@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Logo from "../components/Logo";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
@@ -20,7 +21,7 @@ export default function Page7() {
       type: appActions.CHANGE_ANSWER,
       payload: {
         q3: {
-          name: "Trong Hugo thành viên nào là người năng nổ nhất? (Hãy nhập tên 3 người)",
+          name: "Trong Hugo cặp đôi nào khiến bạn ấn tượng nhất? (Hãy nhập tên 3 cặp đôi)",
           answer,
         },
       },
@@ -28,7 +29,8 @@ export default function Page7() {
   };
 
   return (
-    <div className="container h-100">
+    <div className="container h-100 position-relative">
+      <Logo />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col">
           <div className="row">
@@ -44,17 +46,21 @@ export default function Page7() {
               <div className="row">
                 <div className="col-auto">
                   <h5 className="text-yellow fst-italic text-opacity-25 animate__animated animate__fadeIn animate__slow">
-                    Điều kiện: Cặp đôi hoàn hảo, không chỉ là người yêu mà cũng có thể là cặp đôi mà bạn thấy ăn ý với nhau ở trong câu lạc bộ, hay đơn giản cặp đó gây ấn tượng mạnh với bạn nhất.
+                    Điều kiện: Cặp đôi hoàn hảo, không chỉ là người yêu mà cũng có thể là cặp đôi mà bạn thấy ăn ý với nhau ở trong câu lạc bộ, hay đơn giản cặp đó gây ấn tượng
+                    mạnh với bạn nhất.
                   </h5>
                 </div>
               </div>
               <div className="row">
                 <div className="col">
-                  <input
+                  <textarea
                     type="text"
                     className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2 animate__animated animate__fadeInUp"
                     value={answer}
-                    placeholder="Trả lời vào đây nhé..."
+                    rows={3}
+                    placeholder=" Cặp đôi số 1...
+                    Cặp đôi số 2...
+                    Cặp đôi số 3..."
                     onChange={(event) => handleAnswerChanged(event.target.value)}
                   />
                 </div>

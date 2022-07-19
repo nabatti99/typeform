@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Logo from "../components/Logo";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
@@ -28,7 +29,8 @@ export default function Page8() {
   };
 
   return (
-    <div className="container h-100">
+    <div className="container h-100 position-relative">
+      <Logo />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col">
           <div className="row">
@@ -44,7 +46,8 @@ export default function Page8() {
               <div className="row">
                 <div className="col-auto">
                   <h5 className="text-yellow fst-italic text-opacity-25 animate__animated animate__fadeIn animate__slow">
-                    Điều kiện: Người mà truyền cảm hứng cho bạn, có thể họ là lý do mà bạn tham gia Hugo, hoặc họ mang đến cho bạn và mọi người xung quanh một nguồn năng lượng tích cực.
+                    Điều kiện: Người mà truyền cảm hứng cho bạn, có thể họ là lý do mà bạn tham gia Hugo, hoặc họ mang đến cho bạn và mọi người xung quanh một nguồn năng lượng tích
+                    cực.
                   </h5>
                 </div>
               </div>

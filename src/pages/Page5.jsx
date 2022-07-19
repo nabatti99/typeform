@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Logo from "../components/Logo";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
@@ -28,7 +29,8 @@ export default function Page5() {
   };
 
   return (
-    <div className="container h-100">
+    <div className="container h-100 position-relative">
+      <Logo />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col">
           <div className="row">

@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Logo from "../components/Logo";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 import { isNotNull } from "../helper/validation";
@@ -25,14 +26,10 @@ export default function Page3() {
   };
 
   return (
-    <div className="container h-100">
+    <div className="container h-100 position-relative">
+      <Logo style="animate__animated animate__fadeIn" />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col">
-          <div className="row justify-content-end">
-            <div className="col-auto">
-              <img src="main.png" className="img-fluild animate__animated animate__fadeIn" width="100px" />
-            </div>
-          </div>
           <div className="row">
             <div className="col-auto">
               <h4 className="text-yellow-light animate__animated animate__fadeInUp">1</h4>

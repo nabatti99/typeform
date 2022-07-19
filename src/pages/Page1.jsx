@@ -29,9 +29,15 @@ export default function Page1() {
             </div>
           </div>
 
-          <div className="row justify-content-center mt-1">
+          <div className="row g-1 justify-content-center align-items-center mt-1">
             <div className="col-auto">
-              <h5 className="text-uppercase text-yellow text-opacity-50 animate__animated animate__fadeInUp animate__slow">🔥HUGO ENGLISH CLUB - LIGHT UP YOUR FIRE🔥</h5>
+              <h5 className="d-sm-block d-none">🔥</h5>
+            </div>
+            <div className="col-auto">
+              <h5 className="text-uppercase text-center text-yellow text-opacity-50 animate__animated animate__fadeInUp animate__slow">HUGO ENGLISH CLUB - LIGHT UP YOUR FIRE</h5>
+            </div>
+            <div className="col-auto">
+              <h5>🔥</h5>
             </div>
           </div>
 

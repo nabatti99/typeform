@@ -56,3 +56,22 @@ $utilities: map-merge(
     background-color: rgba($yellow, 35%) !important;
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $gray-900; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $yellow; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $yellow-light; 
+}

@@ -14,6 +14,8 @@ export default function Page10() {
       .post("answers.json", answer)
       .then(() => setIsSubmitted(true))
       .catch((reason) => alert(`Lỗi, hãy thử lại`));
+    // alert(JSON.stringify(answer));
+    // setIsSubmitted(true);
   };
 
   return (
@@ -25,13 +27,13 @@ export default function Page10() {
               <img src="main.png" className="img-fluid animate__animated animate__fadeIn" />
             </div>
             <div className="col-md-6 col-12">
-              <div className="row g-3">
+              <div className="row g-3 justify-content-md-start justify-content-center">
                 <div className="col-auto">
                   <h4 className="text-yellow-light animate__animated animate__fadeIn">"</h4>
                 </div>
-                <div className="col">
+                <div className="col-md col-auto">
                   <h3 className="text-yellow animate__animated animate__fadeIn animate__slow">Cảm ơn bạn đã bình chọn nhé!</h3>
-                  <div className="row mt-5">
+                  <div className="row justify-content-md-start justify-content-center mt-5">
                     <div className="col-auto">
                       <button className="btn btn-lg btn-yellow animate__animated animate__fadeInUp" onClick={handleButtonClicked} disabled={isSubmitted}>
                         Submit
@@ -39,7 +41,7 @@ export default function Page10() {
                     </div>
                   </div>
                   {isSubmitted && (
-                    <div className="row mt-3">
+                    <div className="row justify-content-md-start justify-content-center mt-3">
                       <div className="col-auto">
                         <h5 className="text-yellow text-opacity-50">Đã gửi câu trả lời</h5>
                       </div>

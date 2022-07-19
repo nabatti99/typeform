@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Logo from "../components/Logo";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
@@ -28,7 +29,8 @@ export default function Page6() {
   };
 
   return (
-    <div className="container h-100">
+    <div className="container h-100 position-relative">
+      <Logo />
       <div className="row justify-content-center align-items-center h-100">
         <div className="col">
           <div className="row">
@@ -44,8 +46,8 @@ export default function Page6() {
               <div className="row">
                 <div className="col-auto">
                   <h5 className="text-yellow fst-italic text-opacity-25 animate__animated animate__fadeIn animate__slow">
-                    Điều kiện: Là giải thưởng dành cho thành viên năng nổ, đóng góp nhiều nhất trong câu lạc bộ (Có thể bạn đó tham gia hầu hết các hoạt động Hugo hay có đóng góp nhiều cho team và câu
-                    lạc bộ).
+                    Điều kiện: Là giải thưởng dành cho thành viên năng nổ, đóng góp nhiều nhất trong câu lạc bộ (Có thể bạn đó tham gia hầu hết các hoạt động Hugo hay có đóng góp
+                    nhiều cho team và câu lạc bộ).
                   </h5>
                 </div>
               </div>

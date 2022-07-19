@@ -3,6 +3,7 @@ import appReducer from "./appReducer";
 
 const contextInit = {
   value: {
+    isSignin: false,
     currentPage: 0,
     answer: {},
   },

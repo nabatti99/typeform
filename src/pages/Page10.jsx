@@ -1,13 +1,19 @@
-import { useContext } from "react";
-import appActions from "../context/appActions";
+import { useContext, useState } from "react";
 import { appContext } from "../context/appContext";
-import { appendSheet } from "../helper/gSpreadSheet";
+import request from "../helper/request";
 
 export default function Page10() {
-  const { dispatch } = useContext(appContext);
+  const {
+    value: { answer },
+  } = useContext(appContext);
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleButtonClicked = () => {
-    appendSheet();
+    request
+      .post("answers.json", answer)
+      .then(() => setIsSubmitted(true))
+      .catch((reason) => alert(`Lỗi, hãy thử lại`));
   };
 
   return (
@@ -15,23 +21,30 @@ export default function Page10() {
       <div className="row justify-content-center align-items-center h-100">
         <div className="col">
           <div className="row align-items-center">
-            <div className="col-6">
-              <img src="main.png" className="img-fluid" />
+            <div className="col-md-6 col-12 mb-5">
+              <img src="main.png" className="img-fluid animate__animated animate__fadeIn" />
             </div>
-            <div className="col-6">
+            <div className="col-md-6 col-12">
               <div className="row g-3">
                 <div className="col-auto">
-                  <h4 className="text-yellow-light">"</h4>
+                  <h4 className="text-yellow-light animate__animated animate__fadeIn">"</h4>
                 </div>
                 <div className="col">
-                  <h3 className="text-yellow">Cảm ơn bạn đã bình chọn nhé !</h3>
+                  <h3 className="text-yellow animate__animated animate__fadeIn animate__slow">Cảm ơn bạn đã bình chọn nhé!</h3>
                   <div className="row mt-5">
                     <div className="col-auto">
-                      <button className="btn btn-lg btn-yellow" onClick={handleButtonClicked}>
+                      <button className="btn btn-lg btn-yellow animate__animated animate__fadeInUp" onClick={handleButtonClicked} disabled={isSubmitted}>
                         Submit
                       </button>
                     </div>
                   </div>
+                  {isSubmitted && (
+                    <div className="row mt-3">
+                      <div className="col-auto">
+                        <h5 className="text-yellow text-opacity-50">Đã gửi câu trả lời</h5>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

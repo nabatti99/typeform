@@ -19,7 +19,10 @@ export default function Page5() {
     dispatch({
       type: appActions.CHANGE_ANSWER,
       payload: {
-        q3: answer,
+        q1: {
+          name: "Theo bạn thành viên nào hài hước nhất Hugo? (Hãy nhập tên 3 người)",
+          answer,
+        },
       },
     });
   };
@@ -30,17 +33,17 @@ export default function Page5() {
         <div className="col">
           <div className="row">
             <div className="col-auto">
-              <h5 className="text-yellow-light">3</h5>
+              <h4 className="text-yellow-light animate__animated animate__fadeInUp">3</h4>
             </div>
             <div className="col">
               <div className="row">
                 <div className="col-auto">
-                  <h5 className="text-yellow">Theo bạn thành viên nào hài hước nhất Hugo? (Hãy nhập tên 3 người).</h5>
+                  <h4 className="text-yellow animate__animated animate__fadeInUp">Theo bạn thành viên nào hài hước nhất Hugo? (Hãy nhập tên 3 người).</h4>
                 </div>
               </div>
               <div className="row">
                 <div className="col-auto">
-                  <h5 className="text-yellow fst-italic text-opacity-25">
+                  <h5 className="text-yellow fst-italic text-opacity-25 animate__animated animate__fadeIn animate__slow">
                     Điều kiện: Đó là người hay pha trò, làm cho không khí buổi sinh hoạt trở nên vui vẻ, thoải mái. Hoặc chỉ đơn giản cứ thấy người đó là bạn đã thấy buồn cười rồi.
                   </h5>
                 </div>
@@ -49,7 +52,7 @@ export default function Page5() {
                 <div className="col">
                   <input
                     type="text"
-                    className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2"
+                    className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2 animate__animated animate__fadeInUp"
                     value={answer}
                     placeholder="Trả lời vào đây nhé..."
                     onChange={(event) => handleAnswerChanged(event.target.value)}
@@ -58,7 +61,7 @@ export default function Page5() {
               </div>
               <div className="row mt-5">
                 <div className="col-auto">
-                  <button className="btn btn-lg btn-yellow" onClick={handleButtonClicked}>
+                  <button className="btn btn-lg btn-yellow animate__animated animate__fadeIn animate__delay-1s" onClick={handleButtonClicked}>
                     OK
                   </button>
                 </div>

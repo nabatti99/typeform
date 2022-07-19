@@ -43,3 +43,7 @@ export function appendSheet() {
     (reason) => console.error("error: " + reason.result.error.message)
   );
 }
+
+export async function signIn() {
+  return window.gapi.auth2.getAuthInstance().signIn();
+}

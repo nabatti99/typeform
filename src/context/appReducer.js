@@ -4,6 +4,12 @@ export default function appReducer(prevState, action) {
   console.log("Incoming change");
   console.log(action);
   switch (action.type) {
+    case appActions.UPDATE_SIGNIN_STATUS:
+      return {
+        ...prevState,
+        isSignin: action.payload,
+      };
+
     case appActions.CHANGE_PAGE:
       return {
         ...prevState,

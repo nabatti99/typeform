@@ -49,19 +49,19 @@ export default function Page4() {
         <div className="col">
           <div className="row">
             <div className="col-auto">
-              <h5 className="text-yellow-light">2</h5>
+              <h4 className="text-yellow-light animate__animated animate__fadeInUp">2</h4>
             </div>
             <div className="col">
               <div className="row">
                 <div className="col-auto">
-                  <h5 className="text-yellow">Bạn đến từ?</h5>
+                  <h4 className="text-yellow animate__animated animate__fadeInUp">Bạn đến từ?</h4>
                 </div>
               </div>
-              <div className="row text-yellow-light">
+              <div className="row text-yellow-light animate__animated animate__fadeIn animate__slow">
                 <div className="col">
                   {choices.map((choice) => (
                     <div className="row my-2" key={choice.label}>
-                      <div className="col-4">
+                      <div className="col-lg-4 col-md-6 col-10">
                         <div
                           className={`p-2 bg-yellow bg-opacity-10 border border-yellow-light _choice ${currentChoice === choice.label && "active"}`}
                           onClick={() => handleChoiceChanged(choice.label)}
@@ -82,7 +82,7 @@ export default function Page4() {
               </div>
               <div className="row mt-3">
                 <div className="col-auto">
-                  <button className="btn btn-lg btn-yellow" onClick={handleButtonClicked} disabled={!currentChoice}>
+                  <button className="btn btn-lg btn-yellow animate__animated animate__fadeIn animate__delay-1s" onClick={handleButtonClicked} disabled={!currentChoice}>
                     OK
                   </button>
                 </div>

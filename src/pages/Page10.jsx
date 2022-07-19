@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
+import { appendSheet } from "../helper/gSpreadSheet";
 
 export default function Page10() {
   const { dispatch } = useContext(appContext);
 
-  const handleButtonClicked = () => {};
+  const handleButtonClicked = () => {
+    appendSheet();
+  };
 
   return (
     <div className="container h-100">

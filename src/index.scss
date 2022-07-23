@@ -3,7 +3,9 @@
 $font-family-sans-serif: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $yellow: #f3cd59; 
 $yellow-light: #f9e6ac;
+
 $enable-shadows: false;
+$link-color: $yellow;
 
 $input-bg: transparent;
 $input-color: $yellow;
@@ -12,6 +14,20 @@ $input-border-radius-sm: 0;
 $input-border-radius-lg: 0;
 $input-focus-box-shadow: unset;
 $input-focus-border-color: unset;
+
+$btn-disabled-bg-shade-amount: 40%;
+$btn-disabled-bg-tint-amount: 40%;
+
+$pagination-bg: transparent;
+$pagination-focus-bg: transparent;
+$pagination-hover-bg: transparent;
+$pagination-active-bg: transparent;
+$pagination-disabled-bg: transparent;
+$pagination-border-color: transparent;
+$pagination-hover-border-color: $yellow;
+$pagination-active-border-color: transparent;
+$pagination-disabled-border-color: transparent;
+$pagination-focus-box-shadow: unset;
 
 @import "bootstrap/scss/_functions";
 @import "bootstrap/scss/_variables";
@@ -43,6 +59,26 @@ $utilities: map-merge(
 );
 
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant(
+      $value,
+      $value,
+      $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
+      $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+      $active-background: shade-color($value, $btn-active-bg-shade-amount),
+      $active-border: shade-color($value, $btn-active-border-shade-amount),
+      $disabled-background: shade-color($value, $btn-disabled-bg-shade-amount),
+      $disabled-border: shade-color($value, $btn-disabled-bg-shade-amount)
+    );
+  }
+}
+
+._cursor-pointer {
+  cursor: pointer;
+}
 
 ._choice {
   transition: $btn-transition !important;
@@ -59,6 +95,7 @@ $utilities: map-merge(
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 /* Track */

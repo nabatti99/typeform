@@ -1,15 +1,19 @@
 import { useContext, useState } from "react";
 import Logo from "../components/Logo";
+import Navigator from "../Navigator";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 import { isNotNull } from "../helper/validation";
 
 export default function Page3() {
-  const { dispatch } = useContext(appContext);
+  const {
+    value: { answer },
+    dispatch,
+  } = useContext(appContext);
 
-  const [answer, setAnswer] = useState(null);
+  const [tempAnswer, setTempAnswer] = useState(answer.name);
   const handleAnswerChanged = (newAnswer) => {
-    setAnswer(newAnswer);
+    setTempAnswer(newAnswer);
   };
 
   const handleButtonClicked = () => {
@@ -26,36 +30,40 @@ export default function Page3() {
   };
 
   return (
-    <div className="container h-100 position-relative">
-      <Logo style="animate__animated animate__fadeIn" />
-      <div className="row justify-content-center align-items-center h-100">
-        <div className="col">
-          <div className="row">
-            <div className="col-auto">
-              <h4 className="text-yellow-light animate__animated animate__fadeInUp">1</h4>
-            </div>
-            <div className="col">
-              <div className="row">
-                <div className="col-auto">
-                  <h4 className="text-yellow animate__animated animate__fadeInUp">Tên của bạn là gì?</h4>
-                </div>
+    <div className="row flex-column h-100">
+      <div className="col-auto">
+        <Logo style="animate__animated animate__fadeIn" />
+      </div>
+      <div className="col">
+        <div className="row justify-content-center align-items-center h-100">
+          <div className="col">
+            <div className="row">
+              <div className="col-auto">
+                <h4 className="text-yellow-light animate__animated animate__fadeInUp">1</h4>
               </div>
-              <div className="row">
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2 animate__animated animate__fadeInUp"
-                    value={answer}
-                    placeholder="Trả lời vào đây nhé..."
-                    onChange={(event) => handleAnswerChanged(event.target.value)}
-                  />
+              <div className="col">
+                <div className="row">
+                  <div className="col-auto">
+                    <h4 className="text-yellow animate__animated animate__fadeInUp">Tên của bạn là gì?</h4>
+                  </div>
                 </div>
-              </div>
-              <div className="row mt-5">
-                <div className="col-auto">
-                  <button className="btn btn-lg btn-yellow animate__animated animate__fadeIn animate__delay-1s" onClick={handleButtonClicked} disabled={!answer}>
-                    OK
-                  </button>
+                <div className="row">
+                  <div className="col">
+                    <input
+                      type="text"
+                      className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2 animate__animated animate__fadeInUp"
+                      value={tempAnswer}
+                      placeholder="Trả lời vào đây nhé..."
+                      onChange={(event) => handleAnswerChanged(event.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-5">
+                  <div className="col-auto">
+                    <button className="btn btn-lg btn-yellow animate__animated animate__fadeIn animate__delay-1s" onClick={handleButtonClicked} disabled={!answer}>
+                      OK
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

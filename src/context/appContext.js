@@ -6,6 +6,7 @@ const contextInit = {
     isSignin: false,
     currentPage: 0,
     answer: {},
+    navigatorVisible: false,
   },
   dispatch: null,
 };

@@ -1,12 +1,11 @@
-import { useContext, useEffect } from "react";
-import appActions from "./context/appActions";
+import { useContext } from "react";
 import { appContext } from "./context/appContext";
+import Navigator from "./Navigator";
 import pageIndex from "./pages/pageIndex";
 
 function App() {
   const {
-    value: { currentPage },
-    dispatch,
+    value: { currentPage, navigatorVisible },
   } = useContext(appContext);
 
   return (
@@ -20,7 +19,16 @@ function App() {
         overflowX: "hidden",
       }}
     >
-      {pageIndex[currentPage]}
+      <div className="container h-100">
+        <div className="row flex-column flex-nowrap h-100">
+          <div className="col">{pageIndex[currentPage]}</div>
+          {navigatorVisible && (
+            <div className="col-auto">
+              <Navigator style="my-4" />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

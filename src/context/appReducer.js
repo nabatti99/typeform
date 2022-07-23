@@ -25,6 +25,12 @@ export default function appReducer(prevState, action) {
         },
       };
 
+    case appActions.CHANGE_NAVIGATOR_VISIBLE:
+      return {
+        ...prevState,
+        navigatorVisible: action.payload,
+      };
+
     default:
       return prevState;
   }

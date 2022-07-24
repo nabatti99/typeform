@@ -4,27 +4,6 @@ import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
 export default function Page4() {
-  const { dispatch } = useContext(appContext);
-
-  const [currentChoice, setCurrentChoice] = useState(null);
-  const handleChoiceChanged = (newLabel) => {
-    setCurrentChoice(newLabel);
-  };
-
-  const handleButtonClicked = () => {
-    dispatch({
-      type: appActions.CHANGE_PAGE,
-      payload: 4,
-    });
-
-    dispatch({
-      type: appActions.CHANGE_ANSWER,
-      payload: {
-        team: choices.find((choice) => choice.label === currentChoice).value,
-      },
-    });
-  };
-
   const choices = [
     {
       label: "A",
@@ -43,6 +22,30 @@ export default function Page4() {
       value: "Niffler",
     },
   ];
+
+  const {
+    value: { answer },
+    dispatch,
+  } = useContext(appContext);
+
+  const [currentChoice, setCurrentChoice] = useState(choices.find((choice) => choice.value === answer.team)?.label);
+  const handleChoiceChanged = (newLabel) => {
+    setCurrentChoice(newLabel);
+  };
+
+  const handleButtonClicked = () => {
+    dispatch({
+      type: appActions.CHANGE_PAGE,
+      payload: 4,
+    });
+
+    dispatch({
+      type: appActions.CHANGE_ANSWER,
+      payload: {
+        team: choices.find((choice) => choice.label === currentChoice).value,
+      },
+    });
+  };
 
   return (
     <div className="row flex-column justify-content-center align-items-center h-100">

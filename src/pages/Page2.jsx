@@ -18,7 +18,7 @@ export default function Page2() {
       type: appActions.CHANGE_NAVIGATOR_VISIBLE,
       payload: true,
     });
-  });
+  }, []);
 
   return (
     <div className="row justify-content-center align-items-center h-100">

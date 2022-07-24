@@ -19,7 +19,7 @@ export default function Page1() {
       type: appActions.CHANGE_NAVIGATOR_VISIBLE,
       payload: false,
     });
-  });
+  }, []);
 
   return (
     <div className="row justify-content-center align-items-center h-100">

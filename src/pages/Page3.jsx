@@ -24,7 +24,7 @@ export default function Page3() {
     dispatch({
       type: appActions.CHANGE_ANSWER,
       payload: {
-        name: answer,
+        name: tempAnswer,
       },
     });
   };

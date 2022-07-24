@@ -4,11 +4,14 @@ import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
 export default function Page7() {
-  const { dispatch } = useContext(appContext);
+  const {
+    value: { answer },
+    dispatch,
+  } = useContext(appContext);
 
-  const [answer, setAnswer] = useState(null);
+  const [tempAnswer, setTempAnswer] = useState(answer.q3?.answer);
   const handleAnswerChanged = (newAnswer) => {
-    setAnswer(newAnswer);
+    setTempAnswer(newAnswer);
   };
 
   const handleButtonClicked = () => {
@@ -22,7 +25,7 @@ export default function Page7() {
       payload: {
         q3: {
           name: "Trong Hugo cặp đôi nào khiến bạn ấn tượng nhất? (Hãy nhập tên 3 cặp đôi)",
-          answer,
+          answer: tempAnswer,
         },
       },
     });
@@ -59,7 +62,7 @@ export default function Page7() {
                     <textarea
                       type="text"
                       className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2 animate__animated animate__fadeInUp"
-                      value={answer}
+                      value={tempAnswer}
                       rows={3}
                       placeholder=" Cặp đôi số 1...
                     Cặp đôi số 2...

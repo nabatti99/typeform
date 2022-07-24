@@ -4,11 +4,14 @@ import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
 
 export default function Page9() {
-  const { dispatch } = useContext(appContext);
+  const {
+    value: { answer },
+    dispatch,
+  } = useContext(appContext);
 
-  const [answer, setAnswer] = useState(null);
+  const [tempAnswer, setTempAnswer] = useState(answer.q5?.answer);
   const handleAnswerChanged = (newAnswer) => {
-    setAnswer(newAnswer);
+    setTempAnswer(newAnswer);
   };
 
   const handleButtonClicked = () => {
@@ -22,7 +25,7 @@ export default function Page9() {
       payload: {
         q5: {
           name: "Theo bạn thành viên mới nào có nhiều triển vọng nhất? (Nhập tên 3 người)",
-          answer,
+          answer: tempAnswer,
         },
       },
     });
@@ -58,7 +61,7 @@ export default function Page9() {
                     <input
                       type="text"
                       className="form-control border-top-0 border-start-0 border-end-0 px-0 fs-2 animate__animated animate__fadeInUp"
-                      value={answer}
+                      value={tempAnswer}
                       placeholder="Trả lời vào đây nhé..."
                       onChange={(event) => handleAnswerChanged(event.target.value)}
                     />

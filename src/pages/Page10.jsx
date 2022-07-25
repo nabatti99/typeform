@@ -19,7 +19,10 @@ export default function Page10() {
       return;
     }
 
-    const isKeysValid = ["name", "bestMembers", "inspirers", "jokers", "perfectDuo", "rookies", "team"].reduce((result, validKey) => result && answerKeys.includes(validKey), true);
+    const isKeysValid = ["name", "bestMembers", "inspirers", "jokers", "perfectDuos", "rookies", "team"].reduce(
+      (result, validKey) => result && answerKeys.includes(validKey),
+      true
+    );
     if (!isKeysValid) {
       setHasError("Bạn chưa trả lời hết các câu hỏi. Hãy quay lại đây khi bạn đã hoàn thành nhé 😊");
       return;
@@ -29,7 +32,7 @@ export default function Page10() {
 
     setHasError(null);
     const answerData = {
-      name: answer.name.value,
+      name: answer.name,
       team: answer.team.value,
       bestMembers: answer.bestMembers.map((bestMember) => bestMember.value),
       inspirers: answer.inspirers.map((inspirer) => inspirer.value),

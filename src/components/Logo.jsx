@@ -9,7 +9,7 @@ export default function Logo({ style }) {
         </div>
         <div className="row justify-content-center">
           <div className="col-auto">
-            <h5 className="text-yellow-light">- ROUND 01 -</h5>
+            <h5 className="text-yellow-light">- ROUND 02 -</h5>
           </div>
         </div>
       </div>

@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import Logo from "../components/Logo";
-import Navigator from "../Navigator";
 import appActions from "../context/appActions";
 import { appContext } from "../context/appContext";
-import { isNotNull } from "../helper/validation";
 
 export default function Page3() {
   const {
@@ -60,7 +58,7 @@ export default function Page3() {
                 </div>
                 <div className="row mt-5">
                   <div className="col-auto">
-                    <button className="btn btn-lg btn-yellow animate__animated animate__fadeIn animate__delay-1s" onClick={handleButtonClicked} disabled={!answer}>
+                    <button className="btn btn-lg btn-yellow animate__animated animate__fadeIn animate__delay-1s" onClick={handleButtonClicked} disabled={!tempAnswer}>
                       OK
                     </button>
                   </div>
